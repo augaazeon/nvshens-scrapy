@@ -41,7 +41,6 @@ DOWNLOAD_DELAY = 3
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
   'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36',
-  'Referer':'http://www.mzitu.com'
 }
 
 # Enable or disable spider middlewares
@@ -65,10 +64,12 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   # 'Scrapynvshens.pipelines.ScrapynvshensPipeline': 300,
-    'Scrapynvshens.pipelines.MyImagesPipeline':300
+    'Scrapynvshens.pipelines.MyImagesPipeline':300,
+    'Scrapynvshens.pipelines.MongoPipeline':301
 }
 IMAGES_STORE = './images'
+MONGO_URI = 'mongodb://120.17.34.25:27017/'
+MONGO_DB = 'nvshens'
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
